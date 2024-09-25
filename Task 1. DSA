@@ -1,0 +1,107 @@
+Data Structures
+(Lab)
+Task 1
+Name: Muhammad Aamir
+ SAP ID: 54676
+ Semester: 3rd
+
+Q1: Write down a program in C++ that take an age 
+of 10 students as an input from user and display the 
+largest age of the student in array.
+
+#include <iostream>
+using namespace std;
+int main() {
+ const int students = 10;
+ int ages[numstudents];
+ int biggestage;
+ 
+ cout << "Enter the ages of " << students << " students:\n";
+ for (int i = 0; i < numstudents; i++) {
+ cout << "Student " << i + 1 << ": ";
+ cin >> ages[i];
+ }
+ biggestage = ages[0];
+ for (int i = 1; i < students; i++) {
+ if (ages[i] > biggestage) {
+ biggestage = ages[i];
+ }
+ }
+ cout << "\nThe largest age of the student is: " << biggestage << 
+endl;
+ return 0;
+}
+
+Q2: Write down a program in C++ that take an input 
+data from user in three different arrays and then 
+add the arrays and store them in another array. 
+(Through Dynamic array concept) simple program
+
+#include <iostream>
+using namespace std;
+4 | P a g e
+int main() {
+ int j = 2;
+ int* array1 = new int[j];
+ int* array2 = new int[j];
+ int* array3 = new int[j];
+ int* sumArray = new int[j];
+ cout << "\nEnter elements for the first array:\n";
+ 
+ for(int i = 0; i < j; i++) {
+ cout << "Element " << i + 1 << ": ";
+ cin >> array1[i];
+ }
+ cout << "\nEnter elements for the second array:\n";
+ 
+ for(int i = 0; i < j; i++) {
+ cout << "Element " << i + 1 << ": ";
+ cin >> array2[i];
+ }
+ cout << "\nEnter elements for the third array:\n";
+ 
+ for(int i = 0; i < j; i++) {
+ cout << "Element " << i + 1 << ": ";
+ cin >> array3[i];
+ }
+ for(int i = 0; i < j; i++) {
+ sumArray[i] = array1[i] + array2[i] + array3[i];
+ }
+ cout << "\nThe resulting array after addition is:\n";
+ for(int i = 0; i < j; i++) {
+ cout << "Element " << i + 1 << ": " << sumArray[i] << endl;
+ }
+ return 0;
+}
+
+Q3: Write a program for linear search using the 
+concept of dynamic array (Note: Program should 
+handle the situation if item is not in the list)
+
+#include <iostream>
+using namespace std;
+int main() {
+ int size, searchitem, position = 9;
+ cout << "Enter the size of the array: ";
+ cin >> size;
+ int* array = new int[size];
+ cout << "\nEnter " << size << " elements into the array:\n";
+ for(int i = 0; i < size; i++) {
+ cout << "Element " << i + 1 << ": ";
+ cin >> array[i];
+ }
+ cout << "\nEnter the item to search for: ";
+ cin >> searchitem;
+ for(int i = 0; i < size; i++) {
+ if(array[i] == searchitem) {
+ position = i;
+ break;
+ }
+ }
+ if(position != 9) {
+ cout << "\nItem found at position " << position + 1 << "\n";
+ } else {
+ cout << "\nItem not found in the array.\n";
+ }
+ return 0;
+}
